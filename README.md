@@ -1,5 +1,6 @@
       TECHNICAL APPROACH FOR ROUND 1A
 echnical Solution Architecture
+
 1. Advanced PDF Parsing Strategy
 Primary Technology: PyMuPDF (fitz)
 Core Capabilities:
@@ -9,6 +10,7 @@ Spatial Layout Analysis: Bounding box coordinates for text positioning
 Multi-Page Processing: Efficient page-by-page text block extraction
 Key Advantage: Offline processing with sub-second per-page performance, enabling real-time
 document analysis without external dependencies.
+
 2. Intelligent Text Block Processing
 Normalization Pipeline:
 Whitespace Filtering: Remove empty blocks and normalize spacing
@@ -21,6 +23,8 @@ Font size (in points)
 Font family and weight indicators
 Bounding box coordinates (x, y, width, height)
 Page number reference
+
+
 3. Font-Based Hierarchy Detection
 Statistical Font Analysis Approach
 Step 3.1: Font Size Distribution Analysis
@@ -33,6 +37,7 @@ Title Level: Largest font size, typically on first page
 H1 Level: Second largest size group, often bold
 H2 Level: Third largest size group
 H3 Level: Fourth largest or bold variants of smaller sizes
+
 4. Advanced Heading Classification R
 ules
 Multi-Criteria Heading Detection:
@@ -60,11 +65,13 @@ Focus on top 30% of first page
 Identify largest font size in this region
 Check for center alignment or prominent positioning
 Verify isolation from other text blocks
+
 Phase 2: Validation Checks
 Length Validation: Reasonable title length (5-50 words)
 Content Analysis: Avoid headers/footers, page numbers
 Contextual Relevance: Should relate to document content
 Format Consistency: Matches expected title formatting
+
 Phase 3: Fallback Strategies
 Search in document metadata if available
 Look for title patterns in first few pages
